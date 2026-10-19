@@ -30,8 +30,14 @@ int main(int argc, char *argv[], char *envp[]) {
     printf("Test IOHID\n");
     IOHIDEventSystemRef systemRef = IOHIDEventSystemCreate(NULL);
     IOHIDEventSystemOpen(systemRef, handle_event, NULL, NULL, NULL);
-    IOHIDEventSystemClientRef eventSystemClient = IOHIDEventSystemClientCreate(kCFAllocatorDefault);
-    IOHIDEventSystemClientScheduleWithRunLoop(IOHIDEventSystemClient(), CFRunLoopGetCurrent(), kCFRunLoopDefaultMode);
+    IOHIDEventSystemClientRef eventSystemClient =
+    IOHIDEventSystemClientCreate(kCFAllocatorDefault);
+
+    IOHIDEventSystemClientScheduleWithRunLoop(
+        eventSystemClient,
+        CFRunLoopGetCurrent(),
+        kCFRunLoopDefaultMode
+    );
     
     void *handle = dlopen("/System/Library/PrivateFrameworks/BackBoardHIDEventFoundation.framework/BackBoardHIDEventFoundation", RTLD_GLOBAL);
     assert(handle);
