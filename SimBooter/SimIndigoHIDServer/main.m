@@ -74,7 +74,8 @@ void handle_touch_event(IOHIDEventRef parentEvent) {
         };
 #pragma pack(pop)
         //memcpy(&msg.fingerPayload, &msg.msg.payload, sizeof(IndigoPayload));
-        BOOL sent = [instance sendIndigoMessageDirect:&msg size:sizeof(msg)];
+        BOOL sent = [instance sendIndigoMessageDirect:(IndigoMessage *)&msg
+                                         size:sizeof(msg)];
         if(!sent) {
             // Attempt to reconnect
             [instance connect];
