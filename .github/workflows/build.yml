@@ -15,6 +15,11 @@ jobs:
           git clone --recursive https://github.com/theos/theos $HOME/theos
           echo "THEOS=$HOME/theos" >> $GITHUB_ENV
           echo "THEOS_MAKE_PATH=$HOME/theos/makefiles" >> $GITHUB_ENV
+          
+      - name: Install signing tool
+        run: |
+          brew install ldid
+          command -v ldid
 
       - name: Compile Package Artifact
         run: |
