@@ -39,6 +39,11 @@ int main(int argc, const char **argv, const char **envp) {
     fixed_xpc_connection_enable_sim2host_4sim(peerConnection);
     dispatch_async(dispatch_get_main_queue(), ^{
         server = [[IOSurfaceRemoteServer alloc] initWithListener:peerConnection options:@{}];
+
+        if (server == nil) {
+            fprintf(stderr, "Failed to initialize IOSurfaceRemoteServer.\n");
+            abort();
+        }
     });
     dispatch_main();
 }
