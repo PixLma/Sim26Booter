@@ -37,11 +37,6 @@ typedef NS_ENUM(int, FBSimulatorHIDButton) {
 /**
  The SimulatorKit Implementation.
 
- @param error an error out for any error that occurs in construction.
- @return a new FBSimulatorIndigoHID instance if successful, nil otherwise.
- */
-+ (nullable instancetype)simulatorKitHIDWithError:(NSError **)error;
-
 /**
  An implementation of FBSimulatorIndigoHID, by re-implementing SimulatorKit directly.
 
