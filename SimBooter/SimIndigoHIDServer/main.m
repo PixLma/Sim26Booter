@@ -116,7 +116,7 @@ mach_port_t SimulatorHIDServerInit() {
     [[FBSimulatorHID
         hidForSimulator:(id)[NSObject class]]
      onQueue:dispatch_get_global_queue(QOS_CLASS_DEFAULT, 0) doOnResolved:^(FBSimulatorHID *hid) {
-        instance = hid;
+        instance = (FBSimulatorHID_Reimplemented *)hid;
         NSLog(@"HID server: %@", hid);
         dispatch_semaphore_signal(sema);
     }];
