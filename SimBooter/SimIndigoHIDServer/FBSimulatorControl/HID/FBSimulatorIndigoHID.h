@@ -33,10 +33,7 @@ typedef NS_ENUM(int, FBSimulatorHIDButton) {
  Translates FBSimulatorHID Events into Indigo Structs.
  */
 @interface FBSimulatorIndigoHID : NSObject
-
-/**
- The SimulatorKit Implementation.
-
+ 
 /**
  An implementation of FBSimulatorIndigoHID, by re-implementing SimulatorKit directly.
 
