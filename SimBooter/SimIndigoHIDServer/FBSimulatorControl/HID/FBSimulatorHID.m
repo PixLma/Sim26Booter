@@ -29,8 +29,6 @@
 
 #pragma mark Initializers
 
-static const char *SimulatorHIDClientClassName = "SimulatorKit.SimDeviceLegacyHIDClient";
-
 + (dispatch_queue_t)workQueue
 {
   return dispatch_queue_create("com.facebook.fbsimulatorcontrol.hid", DISPATCH_QUEUE_SERIAL);
